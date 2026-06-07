@@ -260,7 +260,7 @@ ul{list-style:none}
    HERO
    ===================================================================== */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#1E1B18}
-.hero-bg{position:absolute;inset:0;background:url('./assets-new/fotos/DSC0074-hero.jpg') center 35%/cover no-repeat;transform:scale(1.08);animation:heroZoom 20s ease-in-out alternate infinite}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg, #1E1B18 0%, #2D2A26 30%, #3a2e28 60%, #1E1B18 100%);transform:scale(1.08);animation:heroZoom 20s ease-in-out alternate infinite}
 @keyframes heroZoom{0%{transform:scale(1.08)}100%{transform:scale(1.15)}}
 .hero-overlay{position:absolute;inset:0;background:var(--hero-overlay);z-index:1}
 .hero-vignette{position:absolute;inset:0;z-index:2;box-shadow:inset 0 0 200px rgba(0,0,0,.5)}
@@ -567,7 +567,7 @@ ul{list-style:none}
 <header class="header" id="mainHeader">
 <div class="container header-inner">
     <div class="logo" onclick="showPage('inicio')">
-        <img class="logo-svg" src="./assets-new/logos/Logo-ColorDorado-FC.png" alt="Allison Patiño" style="height:42px;width:auto">
+        <span style="font-family:var(--ff-display);font-size:1.4rem;font-weight:600;color:var(--logo-text);letter-spacing:.02em">Allison Patiño</span>
     </div>
     <nav class="nav-links">
         <a data-page="inicio" onclick="showPage('inicio')" class="active">Inicio</a>
@@ -624,7 +624,7 @@ ul{list-style:none}
     <div class="hero-content">
         <div class="hero-content-inner">
             <!-- Logo original -->
-            <img class="hero-logo-svg" src="./assets-new/logos/Logo-Color-FN.png" alt="Allison Patiño - Logo">
+            <span style="font-family:var(--ff-display);font-size:2.8rem;font-weight:700;color:#EDE8E0;letter-spacing:.04em;text-shadow:0 2px 20px rgba(0,0,0,.3)">Allison Patiño</span>
             <div class="hero-divider"></div>
             <div class="hero-role">Licenciada en Música &bull; Cantante Profesional</div>
             <h1>&iexcl;Tu camino musical empieza <span class="first">aquí</span>!</h1>
@@ -778,7 +778,7 @@ ul{list-style:none}
 <div class="container">
     <div class="about-grid">
         <div class="about-img-wrap reveal-left">
-            <div class="about-img-main"><img src="./assets-new/fotos/AL_1-about.jpg" alt="Allison Patiño"></div>
+            <div class="about-img-main"><div style="width:100%;aspect-ratio:927/1400;background:linear-gradient(160deg,#D4716A 0%,#C0605A 40%,#A87A52 100%);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center"><span style="font-family:var(--ff-display);font-size:5rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:.1em">AP</span></div></div>
             <div class="about-accent"></div>
             <div class="about-badge">
                 <div class="about-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
@@ -1041,7 +1041,7 @@ ul{list-style:none}
             <div class="gal-overlay"><h4>Carmina Burana</h4><span>Carl Orff, 2023</span></div>
         </div>
         <div class="gal-item reveal reveal-d1">
-            <img src="./assets-new/fotos/H87A9796.jpg" alt="Allison Patiño">
+            <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#3A8FB7 0%,#2B7A9E 50%,#C8956C 100%);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center"><span style="font-family:var(--ff-display);font-size:3rem;font-weight:600;color:rgba(255,255,255,.2);letter-spacing:.15em">MUSIC</span></div>
             <div class="gal-zoom-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
             <div class="gal-overlay"><h4>Allison Patiño</h4><span>Retrato profesional</span></div>
         </div>
@@ -1190,7 +1190,7 @@ ul{list-style:none}
     <div class="footer-grid">
         <div class="footer-brand">
             <div class="logo" style="margin-bottom:4px">
-                <img src="./assets-new/logos/Logo-Color-FN.png" alt="Allison Patiño" style="height:42px;width:auto">
+                <span style="font-family:var(--ff-display);font-size:1.4rem;font-weight:600;color:#EDE8E0;letter-spacing:.02em">Allison Patiño</span>
             </div>
             <p>Licenciada en Música. Cantante profesional y docente dedicada a compartir la belleza de la música desde el ejercicio artístico y pedagógico.</p>
         </div>
