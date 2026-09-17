@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comparador de paletas · Allison Patiño</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,sans-serif;background:#f6f4f0;color:#232222;padding:50px 20px}
+h1{font-family:'Playfair Display',serif;text-align:center;font-size:2.2rem;margin:0 0 8px}
+.sub{text-align:center;color:#666;max-width:640px;margin:0 auto 40px;line-height:1.6}
+.brand{display:flex;justify-content:center;gap:14px;margin-bottom:40px;flex-wrap:wrap}
+.brand div{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600}
+.brand i{width:22px;height:22px;border-radius:50%;display:inline-block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;max-width:1100px;margin:0 auto}
+.card{background:#fff;border-radius:16px;padding:22px;text-decoration:none;color:inherit;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:.25s;border:2px solid transparent}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.card.current{border-color:#232222}
+.sw{display:flex;gap:6px;margin-bottom:14px} .sw span{flex:1;height:44px;border-radius:8px;border:1px solid rgba(0,0,0,.08)}
+.card h2{font-family:'Playfair Display',serif;font-size:1.2rem;margin:0 0 8px}
+.card p{font-size:.9rem;color:#555;line-height:1.55;margin:0 0 10px}
+.hex{font-size:.75rem;color:#999;font-family:monospace}
+</style></head><body>
+<h1>Comparador de paletas</h1>
+<p class="sub">Todas las versiones usan exactamente los tres colores de marca; lo que cambia es cuál domina, cuál apoya y el tono de los fondos. Haz clic en una tarjeta para ver el sitio completo con esa paleta.</p>
+<div class="brand"><div><i style="background:#ff4f53"></i>Rosado #ff4f53</div><div><i style="background:#0097b2"></i>Azul #0097b2</div><div><i style="background:#e9b000"></i>Amarillo #e9b000</div></div>
+<div class="grid">
+<a class="card current" href="../">
+  <div class="sw"><span style="background:#ff4f53"></span><span style="background:#0097b2"></span><span style="background:#e9b000"></span><span style="background:#FBF7F0"></span></div>
+  <h2>Actual (en vivo) · Rosado protagonista</h2>
+  <p>Rosado como CTA, azul de confianza, amarillo decorativo. Fondo crema. Es la versión publicada en la raíz del sitio.</p>
+  <div class="hex">#ff4f53 · #0097b2 · #e9b000 · #FBF7F0</div>
+</a>
+<a class="card" href="./azul/">
+  <div class="sw"><span style="background:#0097b2"></span><span style="background:#ff4f53"></span><span style="background:#e9b000"></span><span style="background:#FBF7F0"></span></div>
+  <h2>Azul protagonista</h2>
+  <p>CTA y acentos en azul, rosado como color de confianza, amarillo decorativo. Fondo crema.</p>
+  <div class="hex">#0097b2 · #ff4f53 · #e9b000 · #FBF7F0</div>
+</a>
+<a class="card" href="./amarillo/">
+  <div class="sw"><span style="background:#e9b000"></span><span style="background:#0097b2"></span><span style="background:#ff4f53"></span><span style="background:#FFFFFF"></span></div>
+  <h2>Amarillo protagonista</h2>
+  <p>El dorado como color principal (herencia del sitio original), azul de apoyo, rosado en detalles. Fondo blanco y carbón.</p>
+  <div class="hex">#e9b000 · #0097b2 · #ff4f53 · #FFFFFF</div>
+</a>
+<a class="card" href="./rosado-oscuro/">
+  <div class="sw"><span style="background:#ff4f53"></span><span style="background:#0097b2"></span><span style="background:#e9b000"></span><span style="background:#141210"></span></div>
+  <h2>Rosado · modo oscuro</h2>
+  <p>La paleta actual (rosado protagonista) pero con el modo oscuro activado por defecto. Más dramático, estilo escenario.</p>
+  <div class="hex">#ff4f53 · #0097b2 · #e9b000 · #141210</div>
+</a>
+<a class="card" href="./azul-oscuro/">
+  <div class="sw"><span style="background:#0097b2"></span><span style="background:#e9b000"></span><span style="background:#ff4f53"></span><span style="background:#141210"></span></div>
+  <h2>Azul · modo oscuro</h2>
+  <p>Azul protagonista sobre fondos oscuros, amarillo como color de confianza, rosado en detalles.</p>
+  <div class="hex">#0097b2 · #e9b000 · #ff4f53 · #141210</div>
+</a>
+<a class="card" href="./marino/">
+  <div class="sw"><span style="background:#ff4f53"></span><span style="background:#e9b000"></span><span style="background:#0097b2"></span><span style="background:#0B2F3A"></span></div>
+  <h2>Marino + rosado</h2>
+  <p>Fondos profundos azul marino (derivado del azul de marca), rosado como CTA, amarillo de confianza, azul en detalles. Fondo blanco.</p>
+  <div class="hex">#ff4f53 · #e9b000 · #0097b2 · #0B2F3A</div>
+</a></div>
+</body></html>
