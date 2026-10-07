@@ -58,7 +58,7 @@
     --header-text: #5A5550;
 
     --hero-overlay: linear-gradient(180deg,rgba(45,30,20,.3) 0%,rgba(35,22,15,.45) 50%,rgba(20,12,8,.82) 100%);
-    --note-color: rgba(233,176,0,.22);
+    --note-color: rgba(233,176,0,.45);
     --svc-icon-bg: var(--sage-glow);
     --svc-icon-color: var(--sage);
     --svc-check-color: var(--sage);
@@ -133,7 +133,7 @@
     --header-text: #B8B0A6;
 
     --hero-overlay: linear-gradient(180deg,rgba(20,18,16,.4) 0%,rgba(20,18,16,.6) 40%,rgba(20,18,16,.88) 100%);
-    --note-color: rgba(233,176,0,.18);
+    --note-color: rgba(233,176,0,.45);
     --svc-icon-bg: rgba(0,151,178,.1);
     --svc-icon-color: var(--sage-light);
     --svc-check-color: var(--sage-light);
@@ -183,8 +183,12 @@ ul{list-style:none}
 ::-webkit-scrollbar-thumb:hover{background:var(--coral)}
 
 /* == Typography == */
-.section-label{font-family:var(--ff-body);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);display:flex;align-items:center;gap:14px;margin-bottom:14px}
-.section-label::before{content:'';width:36px;height:1.5px;background:linear-gradient(90deg,var(--sage),transparent)}
+.section-label{font-family:var(--ff-body);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--warm-gold);display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.section-label::before{content:'';width:36px;height:1.5px;background:linear-gradient(90deg,var(--warm-gold),transparent)}
+.section-label--sage{color:var(--sage)}
+.section-label--sage::before{background:linear-gradient(90deg,var(--sage),transparent)}
+.section-label--gold{color:var(--warm-gold)}
+.section-label--gold::before{background:linear-gradient(90deg,var(--warm-gold),transparent)}
 .section-title{font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:600;color:var(--text-primary);line-height:1.2;margin-bottom:18px}
 .section-title em{font-style:italic;color:var(--coral)}
 
@@ -224,7 +228,7 @@ ul{list-style:none}
 .header.scrolled{box-shadow:var(--shadow-s)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:100%}
 .logo{display:flex;align-items:center;gap:10px;cursor:pointer}
-.logo-svg{height:32px;width:auto}
+.logo-svg{height:55px;width:120px;display:block;object-fit:contain;object-position:left center}
 .logo-text{font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:var(--text-primary)}
 .logo-text span{color:var(--coral)}
 .nav-links{display:flex;gap:3px;align-items:center}
@@ -244,6 +248,9 @@ ul{list-style:none}
 .theme-icon-sun,.theme-icon-moon{display:none}
 :root .theme-icon-sun{display:block}
 :root .theme-icon-moon{display:none}
+.logo-dark{display:none}
+[data-theme="dark"] .logo-light{display:none}
+[data-theme="dark"] .logo-dark{display:block}
 [data-theme="dark"] .theme-icon-sun{display:none}
 [data-theme="dark"] .theme-icon-moon{display:block}
 
@@ -269,7 +276,7 @@ ul{list-style:none}
 .hero-vignette{position:absolute;inset:0;z-index:2;box-shadow:inset 0 0 200px rgba(0,0,0,.5)}
 .hero-grain{position:absolute;inset:0;z-index:2;opacity:.035;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:128px 128px}
 .hero-particles{position:absolute;inset:0;z-index:3;overflow:hidden}
-.hero-particles .note{position:absolute;color:var(--note-color);font-size:2.2rem;animation:floatNote 15s linear infinite}
+.hero-particles .note{position:absolute;color:var(--note-color);font-size:2.6rem;animation:floatNote 15s linear infinite}
 .hero-particles .note:nth-child(1){left:8%;animation-delay:0s;animation-duration:18s}
 .hero-particles .note:nth-child(2){left:22%;animation-delay:3s;animation-duration:14s;font-size:1.8rem}
 .hero-particles .note:nth-child(3){left:42%;animation-delay:6s;animation-duration:20s}
@@ -278,14 +285,20 @@ ul{list-style:none}
 .hero-particles .note:nth-child(6){left:88%;animation-delay:8s;animation-duration:13s;font-size:2rem}
 .hero-particles .note:nth-child(7){left:35%;animation-delay:10s;animation-duration:17s;font-size:1.4rem}
 .hero-particles .note:nth-child(8){left:55%;animation-delay:7s;animation-duration:15s;font-size:1.8rem}
-@keyframes floatNote{0%{transform:translateY(100vh) rotate(0deg);opacity:0}8%{opacity:.6}85%{opacity:.6}100%{transform:translateY(-120px) rotate(360deg);opacity:0}}
+.hero-particles .note:nth-child(9){left:15%;animation-delay:12s;animation-duration:16s;font-size:2.4rem}
+.hero-particles .note:nth-child(10){left:28%;animation-delay:1s;animation-duration:19s;font-size:1.9rem}
+.hero-particles .note:nth-child(11){left:48%;animation-delay:9s;animation-duration:14s;font-size:2.6rem}
+.hero-particles .note:nth-child(12){left:70%;animation-delay:4s;animation-duration:18s;font-size:2.1rem}
+.hero-particles .note:nth-child(13){left:83%;animation-delay:11s;animation-duration:15s;font-size:1.7rem}
+.hero-particles .note:nth-child(14){left:94%;animation-delay:6.5s;animation-duration:17s;font-size:2.3rem}
+@keyframes floatNote{0%{transform:translateY(100vh) rotate(0deg);opacity:0}8%{opacity:.9}85%{opacity:.9}100%{transform:translateY(-120px) rotate(360deg);opacity:0}}
 
 .hero-content{position:relative;z-index:5;max-width:780px;padding:40px 20px}
 .hero-content-inner{padding:50px 40px;border-radius:var(--r-xl);position:relative}
 .hero-content-inner::before{content:'';position:absolute;inset:-1px;border-radius:var(--r-xl);background:linear-gradient(135deg,rgba(255,79,83,.25),rgba(233,176,0,.15),rgba(0,151,178,.15),rgba(255,79,83,.25));z-index:-1;animation:borderGlow 6s ease-in-out infinite alternate;opacity:.5}
 .hero-content-inner::after{content:'';position:absolute;inset:0;border-radius:var(--r-xl);background:rgba(30,27,24,.6);backdrop-filter:blur(12px);z-index:-1}
 @keyframes borderGlow{0%{opacity:.3;filter:blur(2px)}100%{opacity:.6;filter:blur(4px)}}
-.hero-logo-svg{width:220px;height:auto;margin:0 auto 30px;animation:heroLogoIn 1.2s var(--ease) both .3s}
+.hero-logo-svg{width:375px;height:auto;margin:0 auto 30px;animation:heroLogoIn 1.2s var(--ease) both .3s}
 @keyframes heroLogoIn{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
 .hero-divider{width:70px;height:2px;background:linear-gradient(90deg,transparent,var(--warm-gold),transparent);margin:0 auto 24px;animation:heroFadeIn 1s var(--ease) both .6s}
 .hero-role{font-family:var(--ff-body);font-size:.82rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--warm-gold-light);margin-bottom:18px;animation:heroFadeIn 1s var(--ease) both .7s}
@@ -304,6 +317,14 @@ ul{list-style:none}
 .services-section{padding:var(--section-pad) 0}
 .services-intro{text-align:center;max-width:550px;margin:0 auto 60px}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.svc-card--wide{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:44px 40px;border-left:3px solid var(--warm-gold);background:linear-gradient(135deg,var(--bg-card),var(--bg-surface))}
+.svc-card--wide:hover{border-left-color:var(--warm-gold)}
+.svc-badge{display:inline-block;font-family:var(--ff-body);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#232222;background:var(--warm-gold);padding:6px 12px;border-radius:999px;margin-bottom:16px}
+.svc-card--wide h3{font-size:1.7rem}
+.svc-card--wide .svc-features{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;margin-bottom:0}
+.svc-card--wide .svc-features li{padding:8px 0;border-bottom:1px dashed var(--border)}
+.svc-wide-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:22px}
+@media(max-width:900px){.svc-card--wide{grid-template-columns:1fr;padding:34px 26px}.svc-card--wide .svc-features{grid-template-columns:1fr}}
 .svc-card{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid transparent;border-radius:var(--r-lg);padding:40px 32px;position:relative;overflow:hidden;transition:all .4s var(--ease)}
 .svc-card:hover{transform:translateY(-8px);border-left-color:var(--sage);border-color:var(--border-accent);box-shadow:var(--glow-md)}
 .svc-num{font-family:var(--ff-display);font-size:3.5rem;font-weight:800;color:var(--warm-gold);position:absolute;top:10px;right:20px;line-height:1;opacity:.12}
@@ -322,7 +343,12 @@ ul{list-style:none}
 /* =====================================================================
    ESCUCHAME / AUDIO SHOWCASE
    ===================================================================== */
-.escuchame-section{padding:var(--section-pad) 0;background:var(--bg-surface)}
+.escuchame-section{padding:var(--section-pad) 0;background:#f1eee8;position:relative;overflow:hidden}
+[data-theme="dark"] .escuchame-section{background:var(--bg-surface)}
+.escuchame-section .hero-particles{z-index:0;pointer-events:none}
+.escuchame-section .hero-particles .note{color:var(--coral);opacity:0;animation-name:floatNoteSoft}
+.escuchame-section>.container{position:relative;z-index:1}
+@keyframes floatNoteSoft{0%{transform:translateY(100vh) rotate(0deg);opacity:0}8%{opacity:.5}85%{opacity:.5}100%{transform:translateY(-120px) rotate(360deg);opacity:0}}
 .escuchame-intro{text-align:center;max-width:600px;margin:0 auto 60px}
 .video-placeholder{position:relative;width:100%;max-width:720px;margin:0 auto 50px;aspect-ratio:16/9;border-radius:var(--r-xl);overflow:hidden;background:#1E1B18;border:1px solid var(--border)}
 .video-placeholder img{width:100%;height:100%;object-fit:cover;opacity:.4;filter:blur(1px)}
@@ -331,7 +357,11 @@ ul{list-style:none}
 .play-circle{width:72px;height:72px;border-radius:50%;background:rgba(233,176,0,.9);display:flex;align-items:center;justify-content:center;transition:all .4s var(--ease);box-shadow:0 0 20px rgba(233,176,0,.2)}
 .play-circle svg{width:28px;height:28px;color:#fff;margin-left:3px}
 .video-play-overlay span{font-family:var(--ff-body);font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto}
+.yt-lite{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border);background:#000;cursor:pointer}
+.yt-lite img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+.yt-lite:hover img{transform:scale(1.04)}
+.yt-lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:52px;max-width:900px;margin:0 auto}
 .audio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
 .audio-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;position:relative;overflow:hidden;transition:all .4s var(--ease)}
 .audio-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-m);border-color:var(--border-accent)}
@@ -367,8 +397,8 @@ ul{list-style:none}
 /* =====================================================================
    CTA BANNER
    ===================================================================== */
-.cta-banner{padding:90px 0;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#2D2520 0%,#1E1B18 50%,#1A1614 100%)}
-.cta-banner::before{content:'';position:absolute;top:50%;left:50%;width:700px;height:350px;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(233,176,0,.12),transparent 70%);pointer-events:none}
+.cta-banner{padding:90px 0;text-align:center;position:relative;overflow:hidden;background:#1E1B18}
+.cta-banner::before{display:none}
 .cta-banner::after{display:none}
 .cta-banner h2{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;margin-bottom:12px;position:relative;font-style:italic}
 .cta-banner p{color:rgba(255,255,255,.45);margin-bottom:32px;position:relative}
@@ -381,6 +411,14 @@ ul{list-style:none}
 .page-hero::after{content:'';position:absolute;bottom:-30%;left:-15%;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(0,151,178,.04),transparent 70%)}
 .page-hero h1{font-family:var(--ff-display);font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:700;color:var(--text-primary);margin-bottom:10px;position:relative}
 .page-hero p{color:var(--text-muted);font-size:.95rem;position:relative}
+.page-hero--img{background:#1E1B18 url("./assets-new/img/clases-hero-3.jpg") center 30%/cover no-repeat;padding:calc(var(--header-h) + 110px) 0 120px}
+.page-hero--img::before,.page-hero--img::after{display:none}
+.page-hero--img .container{position:relative;z-index:1}
+.page-hero--img .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,27,24,.15) 0%,rgba(30,27,24,.35) 55%,rgba(30,27,24,.85) 100%)}
+.page-hero--img h1{color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.page-hero--img p{color:rgba(255,255,255,.75)}
+.page-hero--img .breadcrumb{color:rgba(255,255,255,.5)}
+.page-hero--img .breadcrumb a{color:var(--warm-gold-light)}
 .breadcrumb{display:flex;gap:8px;justify-content:center;align-items:center;margin-top:16px;font-size:.78rem;color:var(--text-dim);position:relative}
 .breadcrumb a{color:var(--sage);cursor:pointer;transition:color .3s}
 .breadcrumb a:hover{color:var(--sage-light)}
@@ -517,7 +555,7 @@ ul{list-style:none}
    FOOTER
    ===================================================================== */
 .footer{padding:0 0 30px;background:var(--footer-bg);border-top:none;position:relative;color:var(--footer-text)}
-.footer-accent-line{height:1px;background:linear-gradient(90deg,var(--coral) 0%,var(--coral) 33%,var(--sage) 33%,var(--sage) 66%,var(--warm-gold) 66%,var(--warm-gold) 100%);opacity:.6}
+.footer-accent-line{height:2px;background:linear-gradient(90deg,var(--coral) 0%,var(--coral) 33%,var(--sage) 33%,var(--sage) 66%,var(--warm-gold) 66%,var(--warm-gold) 100%);opacity:.9}
 .footer-content{padding-top:60px}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
 .footer-brand .logo-text{color:#fff;font-size:1.3rem}
@@ -528,6 +566,10 @@ ul{list-style:none}
 .ft-links a:hover{color:var(--coral-light);padding-left:6px}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.06);font-size:.8rem;color:rgba(255,255,255,.25)}
 
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:9000;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);transition:transform .3s var(--ease),box-shadow .3s}
+.wa-float:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 12px 32px rgba(37,211,102,.5)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+@media(max-width:600px){.wa-float{right:16px;bottom:16px;width:52px;height:52px}}
 /* =====================================================================
    RESPONSIVE
    ===================================================================== */
@@ -570,28 +612,14 @@ ul{list-style:none}
         <header class="header" id="mainHeader">
             <div class="container header-inner">
                 <div class="logo" onclick="showPage('inicio')">
-                    <svg class="logo-svg" viewBox="0 0 300 115"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style="height:42px;width:auto"
-                        aria-label="Allison Patiño"><path
-                            d="M 15,90 C 18,86 52,5 78,5 C 94,5 98,48 114,58 C 124,65 130,16 150,12 C 163,9 160,50 170,60 C 184,74 204,5 230,5 C 250,5 276,30 286,48"
-                            fill="none" stroke="var(--logo-wave-1)"
-                            stroke-width="2.8" stroke-linecap="round" /><g
-                            transform="translate(152,64)"><ellipse cx="0" cy="2"
-                                rx="4.2" ry="3" transform="rotate(-20)"
-                                fill="var(--logo-note)" /><rect x="3.5" y="-14"
-                                width="1.6" height="16.5" rx=".5"
-                                fill="var(--logo-note)" /><path
-                                d="M5.1,-14 Q11,-17 9,-9"
-                                fill="var(--logo-note)" /></g><text x="80"
-                            y="98" text-anchor="middle"
-                            font-family="'Playfair Display',Georgia,serif"
-                            font-size="28" font-weight="700" letter-spacing="3"
-                            fill="var(--logo-text)">ALLISON</text><text x="220"
-                            y="98" text-anchor="middle"
-                            font-family="'Playfair Display',Georgia,serif"
-                            font-size="28" font-weight="700" letter-spacing="3"
-                            fill="var(--logo-text)">PATIÑO</text></svg>
+                    <!-- Logo para fondo claro (tema claro) -->
+                    <img
+                        src="./assets-new/logos/logo-header-claro.png"
+                        alt="Logo" class="logo-svg logo-light">
+                    <!-- Logo para fondo oscuro (tema oscuro) -->
+                    <img
+                        src="./assets-new/logos/logo-header-oscuro.png"
+                        alt="Logo" class="logo-svg logo-dark">
                 </div>
                 <nav class="nav-links">
                     <a data-page="inicio" onclick="showPage('inicio')"
@@ -688,37 +716,19 @@ ul{list-style:none}
                 </div>
                 <div class="hero-content">
                     <div class="hero-content-inner">
-                        <svg class="hero-logo-svg" viewBox="0 0 300 115"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style="display:block;margin:0 auto 24px"
-                            aria-label="Allison Patiño"><path
-                                d="M 15,90 C 18,86 52,5 78,5 C 94,5 98,48 114,58 C 124,65 130,16 150,12 C 163,9 160,50 170,60 C 184,74 204,5 230,5 C 250,5 276,30 286,48"
-                                fill="none" stroke="var(--logo-wave-1)"
-                                stroke-width="2.8" stroke-linecap="round" /><g
-                                transform="translate(152,64)"><ellipse cx="0"
-                                    cy="2" rx="4.2" ry="3"
-                                    transform="rotate(-20)"
-                                    fill="var(--logo-note)" /><rect x="3.5"
-                                    y="-14" width="1.6" height="16.5" rx=".5"
-                                    fill="var(--logo-note)" /><path
-                                    d="M5.1,-14 Q11,-17 9,-9"
-                                    fill="var(--logo-note)" /></g><text x="80"
-                                y="98" text-anchor="middle"
-                                font-family="'Playfair Display',Georgia,serif"
-                                font-size="28" font-weight="700"
-                                letter-spacing="3"
-                                fill="#FFFFFF">ALLISON</text><text x="220"
-                                y="98" text-anchor="middle"
-                                font-family="'Playfair Display',Georgia,serif"
-                                font-size="28" font-weight="700"
-                                letter-spacing="3"
-                                fill="#FFFFFF">PATIÑO</text></svg>
+                        <img
+                            src="./assets-new/logos/logo-header-oscuro.png"
+                            alt="Allison Patiño"
+                            class="hero-logo-svg"
+                            width="500"
+                            style="margin-bottom:20px">
                         <div class="hero-divider"></div>
-                        <div class="hero-role">Licenciada en Música &bull;
+                        <div class="hero-role">Especialista en Pedagogía &bull;
                             Cantante Profesional</div>
                         <h1>Canto &middot; Piano &middot; Teoría</h1>
-                        <p class="hero-desc">Clases personalizadas presenciales
-                            en Bogotá y virtuales.<br>&iexcl;Tu camino musical
+                        <p class="hero-desc">Clases personalizadas virtuales y
+                            presenciales
+                            en Bogotá.<br>&iexcl;Tu camino musical
                             empieza aquí!</p>
                         <div class="hero-btns">
                             <a onclick="showPage('agenda')"
@@ -746,7 +756,7 @@ ul{list-style:none}
                     <div
                         style="text-align:center;max-width:550px;margin:0 auto 55px"
                         class="reveal">
-                        <div class="section-label"
+                        <div class="section-label section-label--sage"
                             style="justify-content:center"><span
                                 style="display:none">.</span>Lo que
                             ofrezco</div>
@@ -764,8 +774,9 @@ ul{list-style:none}
                                         x1="8" y1="23" x2="16"
                                         y2="23" /></svg></div>
                             <h3>Técnica Vocal</h3>
-                            <p class="svc-price-tag">Desde $70.000 / Clase</p>
-                            <p>Explora tu voz! Descubre y eleva tu potencial
+                            <p class="svc-price-tag">Desde $60.000 / Clase</p>
+                            <p>¡Explora tu voz! <br>
+                                Descubre y eleva tu potencial
                                 vocal con conciencia y autoconocimiento.</p>
                             <a onclick="showPage('clases')" class="svc-link">Ver
                                 más<svg viewBox="0 0 24 24" fill="none"
@@ -775,13 +786,13 @@ ul{list-style:none}
                         <div class="svc-card reveal reveal-d1">
                             <div class="svc-icon"><svg viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor"
-                                    stroke-width="2"><path
-                                        d="M9 18V5l12-2v13" /><circle cx="6"
-                                        cy="18" r="3" /><circle cx="18" cy="16"
-                                        r="3" /></svg></div>
+                                    stroke-width="2"><rect x="3" y="5"
+                                        width="18" height="14" rx="2" /><path
+                                        d="M7 5v9M11 5v9M15 5v9M19 5v9M3 14h18" /></svg></div>
                             <h3>Piano</h3>
-                            <p class="svc-price-tag">Desde $70.000 / Clase</p>
-                            <p>Aprende a tocar el piano! Desarrolla tu destreza
+                            <p class="svc-price-tag">Desde $60.000 / Clase</p>
+                            <p>¡Aprende a tocar el piano!<br>
+                                Desarrolla tu destreza
                                 musical mientras exploras la belleza y
                                 versatilidad de este instrumento.</p>
                             <a onclick="showPage('clases')" class="svc-link">Ver
@@ -793,11 +804,13 @@ ul{list-style:none}
                             <div class="svc-icon"><svg viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor"
                                     stroke-width="2"><path
-                                        d="M4 19.5A2.5 2.5 0 016.5 17H20" /><path
-                                        d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" /></svg></div>
+                                        d="M9 18V5l12-2v13" /><circle cx="6"
+                                        cy="18" r="3" /><circle cx="18" cy="16"
+                                        r="3" /></svg></div>
                             <h3>Teoría Musical</h3>
-                            <p class="svc-price-tag">Consultar precio</p>
-                            <p>Amplia tu horizonte musical! Enriquece tu
+                            <p class="svc-price-tag">Desde $50.000 / Clase</p>
+                            <p>¡Amplia tu horizonte musical!<br>
+                                Enriquece tu
                                 práctica artistica con conocimientos de
                                 gramática, armonía y teoría musical para los
                                 examenes de ingreso universitario.</p>
@@ -819,37 +832,57 @@ ul{list-style:none}
 
             <!-- Escúchame Section -->
             <section class="escuchame-section">
+                <div class="hero-particles">
+                    <div class="note">&#9835;</div><div
+                        class="note">&#9834;</div><div
+                        class="note">&#9833;</div>
+                    <div class="note">&#9835;</div><div
+                        class="note">&#9834;</div><div
+                        class="note">&#9833;</div>
+                    <div class="note">&#9839;</div><div
+                        class="note">&#9838;</div>
+                    <div class="note">&#9835;</div><div
+                        class="note">&#9834;</div><div
+                        class="note">&#9833;</div>
+                    <div class="note">&#9835;</div><div
+                        class="note">&#9834;</div><div
+                        class="note">&#9839;</div>
+                </div>
                 <div class="container">
                     <div class="escuchame-intro reveal">
-                        <div class="section-label"
+                        <div class="section-label section-label--gold"
                             style="justify-content:center"><span
                                 style="display:none">.</span>Mi Voz</div>
                         <h2 class="section-title">Escúchame</h2>
                         <p style="color:var(--text-muted)">La voz es mi
-                            instrumento principal. Aqui puedes escuchar algunas
-                            de mis interpretaciónes de repertorio lírico
-                            clásico.</p>
+                            instrumento principal. <br> Aqui puedes escuchar
+                            algunas
+                            de mis interpretaciónes de repertorio lírico.</p>
                     </div>
 
                     <!-- Videos de YouTube -->
                     <div class="video-grid reveal">
-                        <div
-                            style="position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border)">
-                            <iframe width="100%" height="100%"
-                                src="https://www.youtube.com/embed/W7vQ2dYFBAY"
-                                title="Video Allison Patiño 1" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                                style="position:absolute;inset:0;width:100%;height:100%"></iframe>
+                        <div class="yt-lite" data-id="_yvxGYJUcVw"
+                            onclick="playYT(this)"
+                            title="Video Allison Patiño 1">
+                            <img
+                                src="https://img.youtube.com/vi/_yvxGYJUcVw/hqdefault.jpg"
+                                alt="Video Allison Patiño 1" loading="lazy">
+                            <div class="video-play-overlay"><div
+                                    class="play-circle"><svg viewBox="0 0 24 24"
+                                        fill="currentColor"><path
+                                            d="M8 5v14l11-7z" /></svg></div><span>Reproducir</span></div>
                         </div>
-                        <div
-                            style="position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border)">
-                            <iframe width="100%" height="100%"
-                                src="https://www.youtube.com/embed/yu2mlbBy0Iw"
-                                title="Video Allison Patiño 2" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                                style="position:absolute;inset:0;width:100%;height:100%"></iframe>
+                        <div class="yt-lite" data-id="Tpv8kv97upg"
+                            onclick="playYT(this)"
+                            title="Video Allison Patiño 2">
+                            <img
+                                src="https://img.youtube.com/vi/Tpv8kv97upg/hqdefault.jpg"
+                                alt="Video Allison Patiño 2" loading="lazy">
+                            <div class="video-play-overlay"><div
+                                    class="play-circle"><svg viewBox="0 0 24 24"
+                                        fill="currentColor"><path
+                                            d="M8 5v14l11-7z" /></svg></div><span>Reproducir</span></div>
                         </div>
                     </div>
                 </div>
@@ -960,25 +993,36 @@ ul{list-style:none}
                 <div
                     style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none">
                     <span
-                        style="position:absolute;left:5%;top:20%;font-size:2.5rem;color:rgba(233,176,0,.15);animation:floatNote 18s linear infinite">&#9835;</span>
+                        style="position:absolute;left:5%;top:20%;font-size:2.5rem;color:rgba(233,176,0,.35);animation:floatNote 18s linear infinite">&#9835;</span>
                     <span
-                        style="position:absolute;left:15%;top:60%;font-size:1.8rem;color:rgba(255,79,83,.12);animation:floatNote 14s linear infinite 3s">&#9834;</span>
+                        style="position:absolute;left:15%;top:60%;font-size:1.8rem;color:rgba(255,79,83,.35);animation:floatNote 14s linear infinite 3s">&#9834;</span>
                     <span
-                        style="position:absolute;left:30%;top:30%;font-size:3rem;color:rgba(233,176,0,.1);animation:floatNote 20s linear infinite 6s">&#9833;</span>
+                        style="position:absolute;left:30%;top:30%;font-size:3rem;color:rgba(233,176,0,.35);animation:floatNote 20s linear infinite 6s">&#9833;</span>
                     <span
-                        style="position:absolute;left:50%;top:70%;font-size:2rem;color:rgba(0,151,178,.1);animation:floatNote 16s linear infinite 2s">&#9835;</span>
+                        style="position:absolute;left:50%;top:70%;font-size:2rem;color:rgba(0,151,178,.35);animation:floatNote 16s linear infinite 2s">&#9835;</span>
                     <span
-                        style="position:absolute;left:70%;top:15%;font-size:2.2rem;color:rgba(255,79,83,.12);animation:floatNote 19s linear infinite 5s">&#9834;</span>
+                        style="position:absolute;left:70%;top:15%;font-size:2.2rem;color:rgba(255,79,83,.35);animation:floatNote 19s linear infinite 5s">&#9834;</span>
                     <span
-                        style="position:absolute;left:85%;top:50%;font-size:1.6rem;color:rgba(233,176,0,.12);animation:floatNote 15s linear infinite 8s">&#9833;</span>
+                        style="position:absolute;left:85%;top:50%;font-size:1.6rem;color:rgba(233,176,0,.35);animation:floatNote 15s linear infinite 8s">&#9833;</span>
                     <span
-                        style="position:absolute;left:40%;top:10%;font-size:2.8rem;color:rgba(0,151,178,.08);animation:floatNote 17s linear infinite 10s">&#9835;</span>
+                        style="position:absolute;left:40%;top:10%;font-size:2.8rem;color:rgba(0,151,178,.35);animation:floatNote 17s linear infinite 10s">&#9835;</span>
                     <span
-                        style="position:absolute;left:60%;top:40%;font-size:1.5rem;color:rgba(233,176,0,.1);animation:floatNote 13s linear infinite 7s">&#9834;</span>
+                        style="position:absolute;left:60%;top:40%;font-size:1.5rem;color:rgba(233,176,0,.35);animation:floatNote 13s linear infinite 7s">&#9834;</span>
+                    <span
+                        style="position:absolute;left:10%;top:80%;font-size:2.4rem;color:rgba(0,151,178,.35);animation:floatNote 16s linear infinite 1s">&#9833;</span>
+                    <span
+                        style="position:absolute;left:22%;top:5%;font-size:2rem;color:rgba(233,176,0,.35);animation:floatNote 14s linear infinite 9s">&#9835;</span>
+                    <span
+                        style="position:absolute;left:45%;top:85%;font-size:2.6rem;color:rgba(255,79,83,.35);animation:floatNote 18s linear infinite 4s">&#9834;</span>
+                    <span
+                        style="position:absolute;left:78%;top:65%;font-size:1.9rem;color:rgba(233,176,0,.35);animation:floatNote 15s linear infinite 12s">&#9839;</span>
+                    <span
+                        style="position:absolute;left:92%;top:25%;font-size:2.3rem;color:rgba(0,151,178,.35);animation:floatNote 17s linear infinite 6s">&#9833;</span>
+                    <span
+                        style="position:absolute;left:35%;top:55%;font-size:2.1rem;color:rgba(255,79,83,.35);animation:floatNote 13s linear infinite 11s">&#9835;</span>
                 </div>
                 <div class="container" style="position:relative;z-index:1">
                     <h2>&iexcl;Tu camino musical empieza aquí!</h2>
-                    <p>Agenda tu primera clase y descubre todo tu potencial.</p>
                     <a onclick="showPage('agenda')"
                         class="btn btn-accent">Reserva tu Clase</a>
                 </div>
@@ -1124,7 +1168,8 @@ ul{list-style:none}
      PAGE: CLASES
      ==================================================================== -->
         <div class="page" id="page-clases">
-            <div class="page-hero">
+            <div class="page-hero page-hero--img">
+                <div class="page-hero-overlay"></div>
                 <div class="container">
                     <h1>Clases</h1>
                     <p>Formacion musical personalizada para todos los
@@ -1142,13 +1187,15 @@ ul{list-style:none}
             <section class="services-section">
                 <div class="container">
                     <div class="services-intro reveal"
-                        style="margin-bottom:60px">
-                        <div class="section-label">Mis clases</div>
+                        style="margin-bottom:60px;text-align:center">
+                        <div class="section-label section-label--sage"
+                            style="justify-content:center"><span
+                                style="display:none">.</span>Mis clases</div>
                         <h2 class="section-title">Oferta <em>Académica</em></h2>
-                        <p style="color:var(--text-muted)">Cada clase esta
-                            diseñada con dedicación para ayudarte a alcanzar tu
-                            máximo potencial musical. Disponibles en modalidad
-                            virtual, presencial y a domicilio.</p>
+                        <p style="color:var(--text-muted)">Las clases son
+                            completamente personalizadas y adaptadas a tu
+                            proceso. Cuento con disponibilidad en modalidad
+                            virtual y presencial.</p>
                     </div>
 
                     <div class="services-grid">
@@ -1162,13 +1209,10 @@ ul{list-style:none}
                                         x1="8" y1="23" x2="16"
                                         y2="23" /></svg></div>
                             <h3>Técnica Vocal</h3>
-                            <p class="svc-price-tag">Virtual $70.000 &bull;
-                                Presencial $75.000</p>
-                            <p>Alcanza un completo dominio de tu instrumento
-                                vocal a traves de la conciencia y la exploración
-                                corporal. Además, abordarás contenidos de teoría
-                                musical, perfeccionando tu dominio de la
-                                partitura y entrenando tu oído musical.</p>
+                            <p class="svc-price-tag">Desde $60.000 / Clase</p>
+                            <p>Explora tu cuerpo, domina tu voz y lleva tu
+                                proceso al siguiente nivel integrando la teoría
+                                musical paso a paso.</p>
                             <ul class="svc-features">
                                 <li><svg viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor"
@@ -1200,18 +1244,14 @@ ul{list-style:none}
                         <div class="svc-card reveal reveal-d1">
                             <div class="svc-icon"><svg viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor"
-                                    stroke-width="2"><path
-                                        d="M9 18V5l12-2v13" /><circle cx="6"
-                                        cy="18" r="3" /><circle cx="18" cy="16"
-                                        r="3" /></svg></div>
+                                    stroke-width="2"><rect x="3" y="5"
+                                        width="18" height="14" rx="2" /><path
+                                        d="M7 5v9M11 5v9M15 5v9M19 5v9M3 14h18" /></svg></div>
                             <h3>Piano</h3>
-                            <p class="svc-price-tag">Virtual $70.000 &bull;
-                                Presencial $75.000</p>
-                            <p>Alcanza el dominio del piano considerando cuatro
-                                elementos clave de la música: melodía, armonía,
-                                ritmo e interpretación. Un espacio donde
-                                explorarás las infinitas posibilidades de
-                                expresión musical. Niveles inicial e
+                            <p class="svc-price-tag">Desde $60.000 / Clase</p>
+                            <p>Domina el piano a través de cuatro elementos
+                                clave: melodía, armonía, ritmo e interpretación.
+                                Clases disponibles para niveles inicial e
                                 intermedio.</p>
                             <ul class="svc-features">
                                 <li><svg viewBox="0 0 24 24" fill="none"
@@ -1245,16 +1285,16 @@ ul{list-style:none}
                             <div class="svc-icon"><svg viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor"
                                     stroke-width="2"><path
-                                        d="M4 19.5A2.5 2.5 0 016.5 17H20" /><path
-                                        d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" /></svg></div>
+                                        d="M9 18V5l12-2v13" /><circle cx="6"
+                                        cy="18" r="3" /><circle cx="18" cy="16"
+                                        r="3" /></svg></div>
                             <h3>Teoría Musical</h3>
-                            <p class="svc-price-tag">Solfeo &bull; Armonía
-                                &bull; Entrenamiento auditivo</p>
-                            <p>Enriquece tu práctica artistica entendiendo la
+                            <p class="svc-price-tag">Desde $50.000 / Clase</p>
+                            <p>Enriquece tu práctica artística entendiendo la
                                 música como un lenguaje. En cada sesión
-                                abordarás solfeo, teoría musical, entrenamiento
-                                auditivo y armonía para un dominio integral del
-                                lenguaje musical.</p>
+                                trabajarás solfeo, teoría musical, entrenamiento
+                                auditivo y armonía para una formación
+                                integral.</p>
                             <ul class="svc-features">
                                 <li><svg viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor"
@@ -1282,6 +1322,67 @@ ul{list-style:none}
                                     viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2"><path
                                         d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+                        </div>
+                        <div class="svc-card svc-card--wide reveal reveal-d3">
+                            <div>
+                                <h3>Preuniversitario de Música</h3>
+                                <p class="svc-price-tag">Programa intensivo
+                                    &bull; Cupos limitados</p>
+                                <p>Prepárate para las pruebas de admisión a los
+                                    programas de música de las universidades. Un
+                                    programa intensivo y personalizado que
+                                    articula la teoría musical, el solfeo, el
+                                    entrenamiento auditivo y la preparación
+                                    instrumental (voz).</p>
+                                <div class="svc-wide-actions">
+                                    <a href="#" onclick="return openWA('Hola Allison, quiero más información sobre el Preuniversitario de Música')" class="btn btn-accent btn-sm">Quiero más información</a>
+                                </div>
+                            </div>
+                            <ul class="svc-features">
+                                <li><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"><polyline
+                                            points="20 6 9 17 4 12" /></svg>Teoría
+                                    Musical</li>
+                                <li><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"><polyline
+                                            points="20 6 9 17 4 12" /></svg>Armonía</li>
+                                <li><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"><polyline
+                                            points="20 6 9 17 4 12" /></svg>Solfeo</li>
+                                <li><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"><polyline
+                                            points="20 6 9 17 4 12" /></svg>Entrenamiento
+                                    Auditivo</li>
+                                <li><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"><polyline
+                                            points="20 6 9 17 4 12" /></svg>Preparación
+                                    instrumental (Canto)</li>
+                                <li><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"><polyline
+                                            points="20 6 9 17 4 12" /></svg>Intensidad:
+                                    3 clases semanales</li>
+                                <li><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"><polyline
+                                            points="20 6 9 17 4 12" /></svg>Duración:
+                                    4 meses</li>
+                                <li><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"><polyline
+                                            points="20 6 9 17 4 12" /></svg>Programa
+                                    personalizado</li>
+                                <li><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"><polyline
+                                            points="20 6 9 17 4 12" /></svg>Modalidad
+                                    presencial y virtual</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -1864,35 +1965,13 @@ ul{list-style:none}
                 <div class="footer-grid">
                     <div class="footer-brand">
                         <div class="logo" style="margin-bottom:4px">
-                            <svg viewBox="0 0 300 115"
-                                xmlns="http://www.w3.org/2000/svg"
-                                style="height:42px;width:auto"
-                                aria-label="Allison Patiño"><path
-                                    d="M 15,90 C 18,86 52,5 78,5 C 94,5 98,48 114,58 C 124,65 130,16 150,12 C 163,9 160,50 170,60 C 184,74 204,5 230,5 C 250,5 276,30 286,48"
-                                    fill="none" stroke="var(--logo-wave-1)"
-                                    stroke-width="2.8"
-                                    stroke-linecap="round" /><g
-                                    transform="translate(152,64)"><ellipse
-                                        cx="0" cy="2" rx="4.2" ry="3"
-                                        transform="rotate(-20)"
-                                        fill="var(--logo-note)" /><rect x="3.5"
-                                        y="-14" width="1.6" height="16.5"
-                                        rx=".5" fill="var(--logo-note)" /><path
-                                        d="M5.1,-14 Q11,-17 9,-9"
-                                        fill="var(--logo-note)" /></g><text
-                                    x="80" y="98" text-anchor="middle"
-                                    font-family="'Playfair Display',Georgia,serif"
-                                    font-size="28" font-weight="700"
-                                    letter-spacing="3"
-                                    fill="#FFFFFF">ALLISON</text><text x="220"
-                                    y="98" text-anchor="middle"
-                                    font-family="'Playfair Display',Georgia,serif"
-                                    font-size="28" font-weight="700"
-                                    letter-spacing="3"
-                                    fill="#FFFFFF">PATIÑO</text></svg>
+                            <img src="./assets-new/logos/logo-header-oscuro.png"
+                                alt="Allison Patiño"
+                                style="height:55px;width:auto;display:block">
                         </div>
-                        <p>Licenciada en Música. Cantante profesional y docente
-                            dedicada a compartir la belleza de la música desde
+                        <p>Licenciada en Música, Especialista en Pedagogía y
+                            Cantante Profesional. <br>
+                            Dedicada a compartir la pasión por la música desde
                             el ejercicio artístico y pedagógico.</p>
                     </div>
                     <div>
@@ -1925,8 +2004,6 @@ ul{list-style:none}
                         <ul class="ft-links">
                             <li><a href="tel:+573203568691">+57 320 356
                                     8691</a></li>
-                            <li><a href="tel:+573102050666">+57 310 205
-                                    0666</a></li>
                             <li><a
                                     href="mailto:allisonpatinocanto@gmail.com">allisonpatinocanto@gmail.com</a></li>
                             <li><a>Bogotá, Colombia</a></li>
@@ -1947,6 +2024,27 @@ ul{list-style:none}
         <script>
 (function(){
     'use strict';
+
+
+
+    // -- WhatsApp: móvil abre la app, escritorio abre WhatsApp Web directo --
+    window.openWA = function(msg) {
+        const phone = '573203568691';
+        const text = encodeURIComponent(msg || 'Hola Allison, quiero más información sobre tus clases.');
+        const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const url = mobile
+            ? 'https://wa.me/' + phone + '?text=' + text
+            : 'https://web.whatsapp.com/send?phone=' + phone + '&text=' + text;
+        window.open(url, '_blank', 'noopener');
+        return false;
+    };
+
+    // -- YouTube: cargar reproductor al hacer clic --
+    window.playYT = function(el) {
+        const id = el.dataset.id;
+        el.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="Video Allison Patiño" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+        el.onclick = null;
+    };
 
     // -- Theme Toggle with localStorage --
     const html = document.documentElement;
@@ -2054,5 +2152,6 @@ ul{list-style:none}
 })();
 </script>
 
-    </body>
+    <a class="wa-float" href="#" onclick="return openWA()" aria-label="Escríbeme por WhatsApp" title="Escríbeme por WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg></a>
+</body>
 </html>
