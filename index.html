@@ -1333,9 +1333,12 @@ ul{list-style:none}
                                     programa intensivo y personalizado que
                                     articula la teoría musical, el solfeo, el
                                     entrenamiento auditivo y la preparación
-                                    instrumental (voz).</p>
+                                    instrumental.</p>
                                 <div class="svc-wide-actions">
-                                    <a href="#" onclick="return openWA('Hola Allison, quiero más información sobre el Preuniversitario de Música')" class="btn btn-accent btn-sm">Quiero más información</a>
+                                    <a href="#"
+                                        onclick="return openWA('Hola Allison, quiero más información sobre el Preuniversitario de Música')"
+                                        class="btn btn-accent btn-sm">Quiero más
+                                        información</a>
                                 </div>
                             </div>
                             <ul class="svc-features">
@@ -1388,8 +1391,40 @@ ul{list-style:none}
                 </div>
             </section>
 
-            <div class="cta-banner">
-                <div class="container" style="position:relative">
+            <div class="cta-banner" style="position:relative;overflow:hidden">
+                <!-- Notas musicales flotantes -->
+                <div
+                    style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none">
+                    <span
+                        style="position:absolute;left:5%;top:20%;font-size:2.5rem;color:rgba(233,176,0,.35);animation:floatNote 18s linear infinite">&#9835;</span>
+                    <span
+                        style="position:absolute;left:15%;top:60%;font-size:1.8rem;color:rgba(255,79,83,.35);animation:floatNote 14s linear infinite 3s">&#9834;</span>
+                    <span
+                        style="position:absolute;left:30%;top:30%;font-size:3rem;color:rgba(233,176,0,.35);animation:floatNote 20s linear infinite 6s">&#9833;</span>
+                    <span
+                        style="position:absolute;left:50%;top:70%;font-size:2rem;color:rgba(0,151,178,.35);animation:floatNote 16s linear infinite 2s">&#9835;</span>
+                    <span
+                        style="position:absolute;left:70%;top:15%;font-size:2.2rem;color:rgba(255,79,83,.35);animation:floatNote 19s linear infinite 5s">&#9834;</span>
+                    <span
+                        style="position:absolute;left:85%;top:50%;font-size:1.6rem;color:rgba(233,176,0,.35);animation:floatNote 15s linear infinite 8s">&#9833;</span>
+                    <span
+                        style="position:absolute;left:40%;top:10%;font-size:2.8rem;color:rgba(0,151,178,.35);animation:floatNote 17s linear infinite 10s">&#9835;</span>
+                    <span
+                        style="position:absolute;left:60%;top:40%;font-size:1.5rem;color:rgba(233,176,0,.35);animation:floatNote 13s linear infinite 7s">&#9834;</span>
+                    <span
+                        style="position:absolute;left:10%;top:80%;font-size:2.4rem;color:rgba(0,151,178,.35);animation:floatNote 16s linear infinite 1s">&#9833;</span>
+                    <span
+                        style="position:absolute;left:22%;top:5%;font-size:2rem;color:rgba(233,176,0,.35);animation:floatNote 14s linear infinite 9s">&#9835;</span>
+                    <span
+                        style="position:absolute;left:45%;top:85%;font-size:2.6rem;color:rgba(255,79,83,.35);animation:floatNote 18s linear infinite 4s">&#9834;</span>
+                    <span
+                        style="position:absolute;left:78%;top:65%;font-size:1.9rem;color:rgba(233,176,0,.35);animation:floatNote 15s linear infinite 12s">&#9839;</span>
+                    <span
+                        style="position:absolute;left:92%;top:25%;font-size:2.3rem;color:rgba(0,151,178,.35);animation:floatNote 17s linear infinite 6s">&#9833;</span>
+                    <span
+                        style="position:absolute;left:35%;top:55%;font-size:2.1rem;color:rgba(255,79,83,.35);animation:floatNote 13s linear infinite 11s">&#9835;</span>
+                </div>
+                <div class="container" style="position:relative;z-index:1">
                     <h2>&iexcl;Tu camino musical empieza aquí!</h2>
                     <p>Contáctame y agenda tu primera clase.</p>
                     <a onclick="showPage('agenda')"
@@ -2152,6 +2187,9 @@ ul{list-style:none}
 })();
 </script>
 
-    <a class="wa-float" href="#" onclick="return openWA()" aria-label="Escríbeme por WhatsApp" title="Escríbeme por WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg></a>
-</body>
+        <a class="wa-float" href="#" onclick="return openWA()"
+            aria-label="Escríbeme por WhatsApp"
+            title="Escríbeme por WhatsApp"><svg viewBox="0 0 24 24"><path
+                    d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41" /></svg></a>
+    </body>
 </html>
